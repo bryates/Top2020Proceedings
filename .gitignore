@@ -4,3 +4,6 @@
 *.log
 *.gz
 eprint.pdf
+*.blg
+*.brf
+*.out

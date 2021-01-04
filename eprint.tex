@@ -3,6 +3,7 @@
 
 \documentclass[12pt]{article}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % basic data for the eprint:
@@ -57,7 +58,7 @@ Columbus, OH 43210, USA}
 \Address{\institute}
 \vfill
 \begin{Abstract}
-Signs of new physics are probed in the context of an Effective Field Theory using events containing one or more top quarks in association with additional leptons. Data consisting of proton-proton collisions at a center-of-mass energy of $\sqrt{s}=$13 TeV was collected at the LHC by the CMS experiment in 2017. We apply a novel technique to parameterize 16 dimension-six EFT operators in terms of the respective Wilson coefficients (WCs). A simultaneous fit is performed to the data in order to extract the two standard deviation confidence intervals (CIs) of the 16 WCs. The Standard Model value of zero is either completely contained in most CIs, and is not excluded by a statistically significant amount in any interval.
+Signs of new physics are probed in the context of an Effective Field Theory using events containing one or more top quarks in association with additional leptons. Data consisting of proton-proton collisions at a center-of-mass energy of $\sqrt{s}=$13 TeV was collected at the LHC by the CMS experiment in 2017. We apply a novel technique to parameterize 16 dimension-six EFT operators in terms of the respective Wilson coefficients (WCs). A simultaneous fit is performed to the data in order to extract the two standard deviation confidence intervals (CIs) of the 16 WCs. The Standard Model value of zero is completely contained in most CIs, and is not excluded by a statistically significant amount in any interval.
 \end{Abstract}
 \vfill
 \begin{Presented}
@@ -76,11 +77,11 @@ The Standard Model (SM) of particle physics is one of the most complete and prec
 \begin{equation}
 	\mathcal{L}_{\mathrm{EFT}} = \mathcal{L}_{\mathrm{SM}} + \sum_{d,i} \frac{c_i^{(d)}}{\Lambda^{d-4}}\mathcal{O}_{i}^{(d)},
 \end{equation}
-where $\mathcal{L}_{\mathrm{SM}}$ is the SM Lagrangian, and $c_{i}$ is the $i^{\mathrm{th}}$ WC. It is important to note that all odd numbered dimensions violate lepton number conservation, so this analysis focuses on dimension six. Higher dimensions are suppressed by additional powers of $\Lambda$, making them unimportant at this level of precision.\\
+where $\mathcal{L}_{\mathrm{SM}}$ is the SM Lagrangian, $c_{i}$ is the $i^{\mathrm{th}}$ WC, and $d$ is the dimension of the operator. It is important to note that all odd numbered dimensions violate lepton number conservation. This analysis focuses on dimension six; higher dimensions are suppressed by additional powers of $\Lambda$, making them unimportant at this level of precision.\\
 
-The analysis described in this proceeding uses a novel technique to examine data collected by the CMS Experiment in 2017. It performs a global fit across all processes---including signal and background. We specifically probe EFT effects using multilepton final states. The procedure used helps to constrain the systematic uncertainties, and any correlations rely solely on the data---no assumptions are made. The production channels examined are: $\mathrm{\ttbar l\nu}$, $\mathrm{\ttbar l\overline{l}}$, $\mathrm{t l\overline{l}q}$, and $\mathrm{tHq}$, where $\mathrm{H \to \bbbar}$ is specifically removed.\\
+The analysis described in this proceeding uses a novel technique to examine data collected by the CMS experiment in 2017. It performs a global fit across all processes---including signal and background. We specifically probe EFT effects using multilepton final states. The procedure used helps to constrain the systematic uncertainties, and any correlations rely solely on the data---no assumptions are made. The production channels examined are: $\mathrm{\ttbar l\nu}$, $\mathrm{\ttbar l\overline{l}}$, $\mathrm{t l\overline{l}q}$, and $\mathrm{tHq}$, where $\mathrm{H \to \bbbar}$ is specifically removed.\\
 
-\section{Parameterization of simulations}
+\section{Parameterization of the EFT}
 
 The EFT may be parameterized in simulations by splitting the matrix elements ($\mathcal{M}$) into SM and EFT terms
 \begin{equation}
@@ -94,11 +95,11 @@ where the structure constants ($s$) correspond to: the SM term, interference bet
 
 Simulations are generated with non-zero WC values at leading order, and extra partons are included when possible to improve our sensitivity. Initial values are chosen to include all relevant phase space and to optimize the statistical power---$\sigma^2_{\stat} = \sum w^2_i(\vec{c})$. The weight of each event accounts for variations in the yield due to EFT effects, and are used to solve for the structure constants in the quadratic parameterization. These quadratic functions are then used to fit to the data.\\
 
-The simulations are made using the dim6TopEFT model~\cite{AguilarSaavedra:2018nen}. This model uses the Warsaw basis of dimension six operators, an energy scale of $\Lambda=1$ TeV, the CKM matrix is assumed to be a unit matrix, the u, d, s, c, e, and $\mu$ masses are all set to zero, the unitary gauge is used and all Goldstone bosons are removed, baryon and lepton number violating operators are removed, only tree-level simulations are possible, and lepton universality us assumed. The 16 operators which have the largest impact on the signal processes, and relatively small impact on the $\ttbar$ background, are considered. Only the real components are considered since the imaginary coefficients lead to CP violation, and are well constrained by EDM experiments and $\mathrm{B} \to X_s \gamma$ decays.
+The simulations are made using the dim6TopEFT model~\cite{AguilarSaavedra:2018nen}. This model uses the Warsaw basis of dimension-six operators, an energy scale of $\Lambda=1$ TeV, the CKM matrix is assumed to be a unit matrix, the u, d, s, c, e, and $\mu$ masses are all set to zero, the unitary gauge is used and all Goldstone bosons are removed, baryon and lepton number violating operators are removed, only tree-level simulations are possible, and lepton universality us assumed. The 16 operators which have the largest impact on the signal processes, and relatively small impact on the $\ttbar$ background, are considered. Only the real components are considered since the imaginary coefficients lead to CP violation, and are well constrained by EDM experiments and $\mathrm{B} \to X_s \gamma$ decays.
 
-\section{Event selection}
+\section{Event selection and signal extraction}
 
-The analysis is split into 35 sub-categories, including: lepton ($\ell$) multiplicity, sum of the lepton charges, jet multiplicity, and b-tagged jet multiplicity. A BDT is applied to help separate the prompt leptons from the non-prompt leptons. All final-state observables are an admixture of the processes---the method does not require we separate the states. Each analysis sub-category stores the sum of the quadratic coefficients, and therefore the event yields are fully parameterized by the WCs. Table~\ref{tab:Categories} lists all the categories used.
+The analysis is split into 35 sub-categories, including: lepton ($\ell$) multiplicity, sum of the lepton charges, jet multiplicity, and b-tagged jet multiplicity. A BDT is applied to help separate the prompt leptons from the non-prompt leptons. All final-state observables are an admixture of the processes---the method does not require we separate the states. Each analysis sub-category stores the sum of the quadratic coefficients, and therefore the event yields are fully parameterized by the WCs. Table~\ref{tab:Categories} lists all the categories used.\\
 
 \begin{table}[htbp]
 	\caption{Requirements for the different event categories.  Requirements separated by commas indicate a division into subcategories.  The b jet requirement on individual jets varies based on the lepton category, as described in the text.}
@@ -116,9 +117,9 @@ The analysis is split into 35 sub-categories, including: lepton ($\ell$) multipl
 	\end{tabular}}
 \end{table}
 
-\section{Signal extraction}
+%\section{Signal extraction}
 
-Each category listed in Table~\ref{tab:Categories} is treated as a Poisson experiment with a probability of obtaining the observed data. A profiled likelihood is used simultaneously fits all categories and is used to extract the 2 standard deviation ($\sigma$) confidence intervals (CIs). Two fitting procedures are used: one where a single WC is fit while the other 15 are treated as unconstrained nuisance parameters, and another where a single WC is fit while the other 15 WCs are fixed to their SM value of zero. The first fitting procedure is the more physical of the two, as there is no reason for new physics to only favor one WC. The second procedure is an extreme scenario where nature has a single WC. The ability to this single WC is limited by the lack of knowledge of the other 15.\\
+Each category listed in Table~\ref{tab:Categories} is treated as a Poisson experiment with a probability of obtaining the observed data. A profiled likelihood is used simultaneously fit all categories and is used to extract the 2 standard deviation ($\sigma$) confidence intervals (CIs). Two fitting procedures are used: one where a single WC is fit while the other 15 are treated as unconstrained nuisance parameters, and another where a single WC is fit while the other 15 WCs are fixed to their SM value of zero. The first fitting procedure is the more physical of the two, as there is no reason for new physics to only favor one WC. The second procedure is an extreme scenario where nature has a single WC. The ability to fit this single WC is limited by the lack of knowledge of the other 15.\\
 
 The most important systematic uncertainties in this analysis are: the misidentified lepton rate estimate, and simulation modeling including  matrix-element parton-shower matching, missing parton uncertainties, and scale uncertainties.
 
@@ -139,14 +140,24 @@ Uncertainties in the process of matching matrix element simulations to those pro
 	\label{fig:SummaryPlot}
 \end{figure}
 
-The 1$\sigma$ and 2$\sigma$ CIs are visualized in Figure~\ref{fig:SummaryPlot}. When the other 15 WCs are fixed to $\ctW$, $\ctp$, and $\cpt$ obtain disjoint 1$\sigma$ CIs. This is due to the quadratic nature of the parameterization, and may broaden the profiled likelihood curves. This will result in slightly larger CIs. None of the WCs exclude the SM value of zero by any statistically significant amount.
+The 1$\sigma$ and 2$\sigma$ CIs are visualized in Figure~\ref{fig:SummaryPlot}. When the other 15 WCs are fixed to zero $\ctW$, $\ctp$, and $\cpt$ obtain broader disjoint 1$\sigma$ CIs. This is due to the quadratic nature of the parameterization, which broadens the profiled likelihood curves. None of the WCs exclude the SM value of zero by any statistically significant amount. Figure~\ref{fig:postfit-yields} contains the event yields for the SM (left) and the postfit values (right).
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.85\textwidth]{plots/yields_leg.pdf} \\
+	\includegraphics[width=0.49\textwidth]{plots/yields_prefit.pdf}
+	\includegraphics[width=0.49\textwidth]{plots/yields_postfit.pdf}
+	\caption{Expected yields prefit (left) and postfit (right). The postfit values of the WCs are obtained from performing the fit over all WCs simultaneously. ``Conv." refers to the photon conversion background, ``Charge misid." is the lepton charge mismeasurement background, and ``Misid. leptons" is the background from misidentified leptons.  The jet multiplicity bins have been combined here, however, the fit is performed using all 35 event categories. The lower panel is the ratio of the observation over the prediction.}
+	\label{fig:postfit-yields}
+\end{figure}
+
 
 
 \Acknowledgements
 We would like to acknowledge the CMS Collaboration for their work in maintaining the CMS experiment and collecting all relevant data for this analysis. We also thank Adam Martin and Jeong Han Kim for their theoretical guidance in configuring and debugging the EFT model used to generate the signal samples in this analysis.
 
 
-\bibliographystyle{abbrv}
+\bibliographystyle{ieeetr}
 
 \bibliography{eprint}
 
