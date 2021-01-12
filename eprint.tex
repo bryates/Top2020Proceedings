@@ -79,7 +79,7 @@ The Standard Model (SM) of particle physics is one of the most complete and prec
 \end{equation}
 where $\mathcal{L}_{\mathrm{SM}}$ is the SM Lagrangian, $c_{i}$ is the $i^{\mathrm{th}}$ WC, and $d$ is the dimension of the operator. It is important to note that all odd numbered dimensions violate lepton number conservation. This analysis focuses on dimension six; higher dimensions are suppressed by additional powers of $\Lambda$, making them unimportant at this level of precision.\\
 
-The analysis described in this proceeding uses a novel technique to examine data collected by the CMS experiment in 2017. It performs a global fit across all processes---including signal and background. We specifically probe EFT effects using multilepton final states. The procedure used helps to constrain the systematic uncertainties, and any correlations rely solely on the data---no assumptions are made. The production channels examined are: $\mathrm{\ttbar l\nu}$, $\mathrm{\ttbar l\overline{l}}$, $\mathrm{t l\overline{l}q}$, and $\mathrm{tHq}$, where $\mathrm{H \to \bbbar}$ is specifically removed.\\
+The analysis described in this proceeding uses a novel technique to examine data collected by the CMS experiment in 2017, corresponding to an integrated luminosity of $41.5\,\mathrm{fb^{-1}}$. It performs a global fit across all processes---including signal and background. We specifically probe EFT effects using multilepton final states. The procedure used helps to constrain the systematic uncertainties, and any correlations rely solely on the data---no assumptions are made. The production channels examined are: $\mathrm{\ttbar l\nu}$, $\mathrm{\ttbar l\overline{l}}$, $\mathrm{t l\overline{l}q}$, and $\mathrm{tHq}$, where $\mathrm{H \to \bbbar}$ is specifically removed. The complete details of this analysis may be found in~\cite{Sirunyan:2020tqm}.\\
 
 \section{Parameterization of the EFT}
 
@@ -91,11 +91,12 @@ The cross section is proportional to $\mathcal{M}^2$, and each simulated event m
 \begin{equation}
 	w_i\left(\frac{\vec{c}}{\Lambda^2}\right) = s_{0i} + \sum_js_{1ij}\frac{c_j}{\Lambda^2} + \sum_js_{2ij}\frac{c_j^2}{\Lambda^4} + \sum_{j,k}s_{3ijk} \frac{c_j}{\Lambda^2} \frac{c_k}{\Lambda^2},
 \end{equation}
-where the structure constants ($s$) correspond to: the SM term, interference between the SM and EFT, pure EFT terms, and interference between EFT terms. These weights may be summed to produce the predicted event yields as a function of the WCs.\\
+where the structure constants ($s$) correspond to: the SM term ($s_0$), interference between the SM and EFT ($s_1$), pure EFT terms ($s_2$), and interference between EFT terms ($s_3$). These weights may be summed to produce the predicted event yields as a function of the WCs.\\
 
 Simulations are generated with non-zero WC values at leading order, and extra partons are included when possible to improve our sensitivity. Initial values are chosen to include all relevant phase space and to optimize the statistical power---$\sigma^2_{\stat} = \sum w^2_i(\vec{c})$. The weight of each event accounts for variations in the yield due to EFT effects, and are used to solve for the structure constants in the quadratic parameterization. These quadratic functions are then used to fit to the data.\\
 
-The simulations are made using the dim6TopEFT model~\cite{AguilarSaavedra:2018nen}. This model uses the Warsaw basis of dimension-six operators, an energy scale of $\Lambda=1$ TeV, the CKM matrix is assumed to be a unit matrix, the u, d, s, c, e, and $\mu$ masses are all set to zero, the unitary gauge is used and all Goldstone bosons are removed, baryon and lepton number violating operators are removed, only tree-level simulations are possible, and lepton universality us assumed. The 16 operators which have the largest impact on the signal processes, and relatively small impact on the $\ttbar$ background, are considered. Only the real components are considered since the imaginary coefficients lead to CP violation, and are well constrained by EDM experiments and $\mathrm{B} \to X_s \gamma$ decays.
+The simulations are made using the dim6TopEFT model~\cite{AguilarSaavedra:2018nen}. %This model uses the Warsaw basis of dimension-six operators, an energy scale of $\Lambda=1$ TeV, the CKM matrix is assumed to be a unit matrix, the u, d, s, c, e, and $\mu$ masses are all set to zero, the unitary gauge is used and all Goldstone bosons are removed, baryon and lepton number violating operators are removed, and lepton universality us assumed. 
+Due to limitations in the model, only tree-level simulations are possible. The 16 operators which have the largest impact on the signal processes, and relatively small impact on the $\ttbar$ background, are considered. Only the real components are considered since the imaginary coefficients lead to CP violation, and are well constrained by EDM experiments and $\mathrm{B} \to X_s \gamma$ decays.
 
 \section{Event selection and signal extraction}
 
@@ -121,7 +122,7 @@ The analysis is split into 35 sub-categories, including: lepton ($\ell$) multipl
 
 Each category listed in Table~\ref{tab:Categories} is treated as a Poisson experiment with a probability of obtaining the observed data. A profiled likelihood is used simultaneously fit all categories and is used to extract the 2 standard deviation ($\sigma$) confidence intervals (CIs). Two fitting procedures are used: one where a single WC is fit while the other 15 are treated as unconstrained nuisance parameters, and another where a single WC is fit while the other 15 WCs are fixed to their SM value of zero. The first fitting procedure is the more physical of the two, as there is no reason for new physics to only favor one WC. The second procedure is an extreme scenario where nature has a single WC. The ability to fit this single WC is limited by the lack of knowledge of the other 15.\\
 
-The most important systematic uncertainties in this analysis are: the misidentified lepton rate estimate, and simulation modeling including  matrix-element parton-shower matching, missing parton uncertainties, and scale uncertainties.
+Systematic uncertainties are treated as nuisance parameters in the profiled fit. The most important systematic uncertainties in this analysis are: the misidentified lepton rate estimate, and simulation modeling including  matrix-element parton-shower matching, missing parton uncertainties, and scale uncertainties.
 
 \subparagraph{Misidentified lepton rate estimate}
 
